@@ -1,6 +1,6 @@
 Hello, j'espère que vous allez bien.
 J'ai passé 7h sur ce projet !
-Je n'ai pas eu le temps de tout finir, mais voici un apercu de mon travail.
+Je n'ai pas eu le temps de tout finir, mais voici un aperçu de mon travail.
 Dites-moi si d'autres features sont mandatory, et je les développerai cette semaine.
 
 Ce que j'ai fait :
@@ -9,7 +9,7 @@ Ce que j'ai fait :
 - développer une v1 fonctionnelle
 - améliorer le style de code en respectant l'architecture hexagonale
 - mise en place des dépendances gherkin/cucumber, et développement d'un test automatisé qui concerne la création de polices d'assurance.
-- mise en place de scrits pour tester les différents flux
+- mise en place de scripts pour tester les différents flux
 - option JPA
 
 Ce qui manque :
