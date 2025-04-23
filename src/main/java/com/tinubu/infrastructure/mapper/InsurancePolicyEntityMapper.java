@@ -1,4 +1,4 @@
-package com.tinubu.domain.mapper;
+package com.tinubu.infrastructure.mapper;
 
 import com.tinubu.domain.model.InsurancePolicy;
 import com.tinubu.infrastructure.entity.InsurancePolicyEntity;

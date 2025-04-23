@@ -29,6 +29,19 @@ public class InsurancePoliciesController {
 		}
 		return ResponseEntity.ok(policies);
 	}
+	/*@GetMapping
+	public ResponseEntity<List<InsurancePolicyDto>> getAll() {
+		// 0-29 30-59 start=0, delta=30 .must() .should()
+		try {
+			List<InsurancePolicyDto> policies = useCase.getAll();
+			if (policies.isEmpty()) {
+				return ResponseEntity.noContent().build();
+			}
+			return ResponseEntity.ok(policies);
+		} catch () {
+			return ResponseEntity.internalServerError();
+		}
+	}*/
 
 	@GetMapping("/{id}")
 	public ResponseEntity<InsurancePolicyDto> getById(@PathVariable long id) {

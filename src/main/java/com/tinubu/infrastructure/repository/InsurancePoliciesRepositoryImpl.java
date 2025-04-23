@@ -3,7 +3,7 @@ package com.tinubu.infrastructure.repository;
 import com.tinubu.domain.model.InsurancePolicy;
 import com.tinubu.domain.spi.InsurancePoliciesRepository;
 import com.tinubu.infrastructure.JpaInsurancePoliciesRepository;
-import com.tinubu.domain.mapper.InsurancePolicyEntityMapper;
+import com.tinubu.infrastructure.mapper.InsurancePolicyEntityMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
