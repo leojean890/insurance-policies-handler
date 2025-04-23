@@ -8,15 +8,15 @@ import java.time.LocalDate;
 public class InsurancePolicyMapper {
 
     public static InsurancePolicyDto toDTO(InsurancePolicy policy) {
-        return new InsurancePolicyDto(
-                policy.getId(),
-                policy.getName(),
-                policy.getStatus(),
-                policy.getCoverageStartDate(),
-                policy.getCoverageEndDate(),
-                policy.getCreationDate(),
-                policy.getUpdateDate()
-        );
+        return InsurancePolicyDto.builder()
+                .id(policy.getId())
+                .name(policy.getName())
+                .status(policy.getStatus())
+                .creationDate(policy.getCreationDate())
+                .coverageStartDate(policy.getCoverageStartDate())
+                .coverageEndDate(policy.getCoverageEndDate())
+                .updateDate(policy.getUpdateDate())
+                .build();
     }
 
     public static InsurancePolicy toDomain(InsurancePolicyDto dto) {

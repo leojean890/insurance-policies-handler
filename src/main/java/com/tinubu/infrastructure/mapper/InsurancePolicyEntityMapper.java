@@ -18,15 +18,15 @@ public class InsurancePolicyEntityMapper {
     }
 
     public static InsurancePolicyEntity toEntity(InsurancePolicy policy) {
-        InsurancePolicyEntity entity = new InsurancePolicyEntity();
-        entity.setId(policy.getId());
-        entity.setName(policy.getName());
-        entity.setStatus(policy.getStatus());
-        entity.setCoverageStartDate(policy.getCoverageStartDate());
-        entity.setCoverageEndDate(policy.getCoverageEndDate());
-        entity.setCreationDate(policy.getCreationDate());
-        entity.setUpdateDate(policy.getUpdateDate());
-        return entity;
+        return InsurancePolicyEntity.builder()
+                .id(policy.getId())
+                .name(policy.getName())
+                .status(policy.getStatus())
+                .coverageStartDate(policy.getCoverageStartDate())
+                .coverageEndDate(policy.getCoverageEndDate())
+                .creationDate(policy.getCreationDate())
+                .updateDate(policy.getUpdateDate())
+                .build();
     }
 }
 

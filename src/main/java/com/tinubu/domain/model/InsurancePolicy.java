@@ -3,7 +3,6 @@ package com.tinubu.domain.model;
 import java.time.LocalDate;
 
 public class InsurancePolicy {
-
 	private final Long id;
 	private final String name;
 	private final String status;
