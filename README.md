@@ -1,6 +1,6 @@
 Hello, j'espère que vous allez bien.
 J'ai passé 7h sur ce projet !
-Je n'ai pas eu le temps de tout finir, mais voici un apercu de mon travail.
+Je n'ai pas eu le temps de tout finir, mais voici un aperçu de mon travail.
 Dites-moi si d'autres features sont mandatory, et je les développerai cette semaine.
 
 Ce que j'ai fait :
@@ -9,20 +9,27 @@ Ce que j'ai fait :
 - développer une v1 fonctionnelle
 - améliorer le style de code en respectant l'architecture hexagonale
 - mise en place des dépendances gherkin/cucumber, et développement d'un test automatisé qui concerne la création de polices d'assurance.
-- mise en place de scrits pour tester les différents flux
+- mise en place de scripts pour tester les différents flux
 - option JPA
 
 Ce qui manque :
 
-- développement de tests automatisés pour la modification d'une police d'assurance, les lister ou en afficher une seule
+- développement de tests automatisés pour la modification d'une police d'assurance, les lister ou en afficher une seule manquants
+- tests untiaires manquants
 - utilisation de docker pour les tests E2E, car actuellement le test gherkin met à jour la base
-- la fonctionnalité demandée "lister les polices" les affiche toutes actuellement dans mon implémentation. 
+  ++ les expected dans les tests à faire en atomique
+- la fonctionnalité demandée "lister les polices" les affiche toutes actuellement dans mon implémentation.
 - utilisation de spring security / JWT token / SSO / azure vault avec un profil par environnement (DEV/RCT/PROD) comme chez Darty. Actuellement j'ai le mot de passe mysql en dur dans application.properties. To be fixed
-- utiliser un domaine distinct pour les opérations d'écriture et un pour les opérations de lecture
-- ajouter toutes les règles de validation 
+- utiliser un domaine distinct pour les opérations d'écriture et un pour les opérations de lecture (CQRS)
+- ajouter toutes les règles de validation
 - option SPA react
 - option dockerfile
 - les 3 champs non-éditables ne le sont vraiment pas (voir InsurancePolicyServiceImpl.update()) mais les conditions sur creationDate et updateDate dans InsurancePolicyMapper.toDomain() devraient être modifiées
+++ bien vérifier et faire en sorte que les objets soient immutables
+++ builder car plus de 4 champs
+++ pagination
+- ++ tests archunit : pour vérifier qu'un package dépend d'un package mais pas d'un autre
+- + ou pour forcer de l'injection par constructeur et interdire injection par champs
 
 Traces d'exécution :
 
