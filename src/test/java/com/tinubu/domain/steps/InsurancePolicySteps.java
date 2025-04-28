@@ -1,6 +1,6 @@
-package com.tinubu.application.steps;
+package com.tinubu.domain.steps;
 
-import com.tinubu.application.given.InsurancePolicy;
+import com.tinubu.domain.given.InsurancePolicy;
 import com.tinubu.domain.service.InsurancePolicyServiceImpl;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.DataTableType;
@@ -70,7 +70,6 @@ public class InsurancePolicySteps {
         assertEquals(LocalDate.parse(expected.getCoverageEndDate()), created.getCoverageEndDate());
     }
 
-    // 🔁 Update
     @When("the client updates the policy with id {long} with the following values:")
     public void theClientUpdatesPolicy(Long id, DataTable dataTable) {
         Map<String, String> row = dataTable.asMaps().get(0);
@@ -97,7 +96,6 @@ public class InsurancePolicySteps {
         assertEquals(LocalDate.parse(expected.getCoverageEndDate()), updatedPolicy.getCoverageEndDate());
     }
 
-    // 📋 List
     @When("the client retrieves all insurance policies")
     public void clientRetrievesAllPolicies() {
         retrievedPolicies = insurancePolicyService.getAll();
@@ -119,7 +117,6 @@ public class InsurancePolicySteps {
         }
     }
 
-    // 🔍 Single read
     @When("the client retrieves the policy with id {long}")
     public void clientRetrievesSinglePolicy(Long id) {
         retrievedSinglePolicy = insurancePolicyService.getById(id).orElse(null);

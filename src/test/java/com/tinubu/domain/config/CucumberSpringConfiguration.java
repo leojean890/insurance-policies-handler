@@ -1,4 +1,4 @@
-package com.tinubu.application.config;
+package com.tinubu.domain.config;
 
 import io.cucumber.spring.CucumberContextConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;

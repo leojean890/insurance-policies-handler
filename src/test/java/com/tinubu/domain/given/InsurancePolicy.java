@@ -1,4 +1,4 @@
-package com.tinubu.application.given;
+package com.tinubu.domain.given;
 
 public class InsurancePolicy {
     private Long id;

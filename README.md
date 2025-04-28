@@ -7,14 +7,17 @@ Ce projet permet de :
 - mettre à jour une police d'assurance
 
 Autres features :
-- développement d'un test automatisé par flux nominal en BDD via gherkin et cucumber.
+- développement d'un test automatisé par flux nominal en Business Driven Development (BDD) via gherkin et cucumber.
 - mise en place de scripts pour tester les différents flux
 - utilisation de JPA pour les bases de données
+- tests automatisés via archunit : pour vérifier qu'un package dépend d'un package mais pas d'un autre (+ TODO : pour forcer de l'injection par constructeur et interdire injection par champs)
 
 Ce qui manque :
 
-- amélioration de la qualité des tests untiaires et d'intégration (par exemple les expected dans les tests sont à faire en atomique) et ajout de tests de cas dégradés/d'erreur
-- utilisation de docker pour les tests E2E, car actuellement le test gherkin met à jour la base
+- amélioration de la qualité des tests untiaires et d'intégration (par exemple les expected dans les tests sont à faire en atomique) 
+- utilisation de docker ou H2 pour les tests E2E, car actuellement le test gherkin met à jour la base
+
+- ajout de tests automatisés de cas dégradés/d'erreur, ajout de code pour mieux les répertorier et les gérer
 
 - utiliser la pagination avec un seuil défini à l'aide de JPA pour la fonctionnalité "lister les polices", qui les affiche toutes actuellement dans mon implémentation.
 - utilisation de spring security / JWT token / SSO / azure vault avec un profil par environnement (DEV/RCT/PROD). Actuellement j'ai le mot de passe mysql en dur dans application.properties. 
@@ -22,7 +25,6 @@ Ce qui manque :
 - ajouter des règles de validation à l'aide de Jakarta (date de début < date de fin), champs non-nuls, etc
 - les 3 champs non-éditables ne le sont vraiment pas (voir InsurancePolicyServiceImpl.update()) mais les conditions sur creationDate et updateDate dans InsurancePolicyMapper.toDomain() devraient être modifiées
 - tous les objets doivent être immutables, poursuivre avec les builders
-- ajouter des tests archunit : pour vérifier qu'un package dépend d'un package mais pas d'un autre ou pour forcer de l'injection par constructeur et interdire injection par champs
 
 
 Traces d'exécution :
