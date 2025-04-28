@@ -1,35 +1,29 @@
-Hello, j'espère que vous allez bien.
-J'ai passé 7h sur ce projet !
-Je n'ai pas eu le temps de tout finir, mais voici un aperçu de mon travail.
-Dites-moi si d'autres features sont mandatory, et je les développerai cette semaine.
+Le projet suivant a été développé en suivant des principes de DDD/BDD à l'aide de l'architecture hexagonale.
 
-Ce que j'ai fait :
+Ce projet permet de :
+- lister et visualiser des polices d'assurances
+- visualiser une police d'assurance
+- créer une police d'assurance
+- mettre à jour une police d'assurance
 
-- lire le sujet, réfléchir à sa résolution et à l'architecture cible
-- développer une v1 fonctionnelle
-- améliorer le style de code en respectant l'architecture hexagonale
-- mise en place des dépendances gherkin/cucumber, et développement d'un test automatisé qui concerne la création de polices d'assurance.
+Autres features :
+- développement d'un test automatisé par flux nominal en BDD via gherkin et cucumber.
 - mise en place de scripts pour tester les différents flux
-- option JPA
+- utilisation de JPA pour les bases de données
 
 Ce qui manque :
 
-- développement de tests automatisés pour la modification d'une police d'assurance, les lister ou en afficher une seule manquants
-- tests untiaires manquants
+- amélioration de la qualité des tests untiaires et d'intégration (par exemple les expected dans les tests sont à faire en atomique) et ajout de tests de cas dégradés/d'erreur
 - utilisation de docker pour les tests E2E, car actuellement le test gherkin met à jour la base
-  ++ les expected dans les tests à faire en atomique
-- la fonctionnalité demandée "lister les polices" les affiche toutes actuellement dans mon implémentation.
-- utilisation de spring security / JWT token / SSO / azure vault avec un profil par environnement (DEV/RCT/PROD) comme chez Darty. Actuellement j'ai le mot de passe mysql en dur dans application.properties. To be fixed
-- utiliser un domaine distinct pour les opérations d'écriture et un pour les opérations de lecture (CQRS)
-- ajouter toutes les règles de validation
-- option SPA react
-- option dockerfile
+
+- utiliser la pagination avec un seuil défini à l'aide de JPA pour la fonctionnalité "lister les polices", qui les affiche toutes actuellement dans mon implémentation.
+- utilisation de spring security / JWT token / SSO / azure vault avec un profil par environnement (DEV/RCT/PROD). Actuellement j'ai le mot de passe mysql en dur dans application.properties. 
+- utiliser un domaine distinct pour les opérations d'écriture et un pour les opérations de lecture (CQRS).
+- ajouter des règles de validation à l'aide de Jakarta (date de début < date de fin), champs non-nuls, etc
 - les 3 champs non-éditables ne le sont vraiment pas (voir InsurancePolicyServiceImpl.update()) mais les conditions sur creationDate et updateDate dans InsurancePolicyMapper.toDomain() devraient être modifiées
-++ bien vérifier et faire en sorte que les objets soient immutables
-++ builder car plus de 4 champs
-++ pagination
-- ++ tests archunit : pour vérifier qu'un package dépend d'un package mais pas d'un autre
-- + ou pour forcer de l'injection par constructeur et interdire injection par champs
+- tous les objets doivent être immutables, poursuivre avec les builders
+- ajouter des tests archunit : pour vérifier qu'un package dépend d'un package mais pas d'un autre ou pour forcer de l'injection par constructeur et interdire injection par champs
+
 
 Traces d'exécution :
 
